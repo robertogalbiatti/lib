@@ -1,0 +1,47 @@
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    opacity: 0.9;
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.primary {
+  background-color: #0070f3;
+  color: white;
+}
+
+.secondary {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.tertiary {
+  background-color: transparent;
+  color: #0070f3;
+  text-decoration: underline;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  
+  &:hover {
+    opacity: 0.5;
+  }
+  
+  &:active {
+    transform: none;
+  }
+}
