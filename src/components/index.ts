@@ -1,2 +1,2 @@
-export * from "./atoms/Button";
-export * from "./atoms/Checkbox";
+export * from './atoms/lib-button';
+export * from './atoms/lib-checkox';
