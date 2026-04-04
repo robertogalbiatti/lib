@@ -1,14 +1,21 @@
 // vite.playground.config.ts
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import path from "path";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
-  root: path.resolve(__dirname, "playground"),
+  root: path.resolve(__dirname, 'playground'),
   plugins: [react()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
+    },
+  },
   resolve: {
     alias: {
-      lib: path.resolve(__dirname, "src"),
+      lib: path.resolve(__dirname, 'src'),
     },
   },
 });
