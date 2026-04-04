@@ -1,0 +1,65 @@
+.container {
+  font-family: "Inter", sans-serif;
+  display: block;
+  color: white;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  transition: all 0.3s ease;
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ .checkmark {
+      background-color: #e50914;
+
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  &:hover input ~ .checkmark {
+    opacity: 0.8;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 7px;
+      top: 3px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    .checkmark {
+      background-color: #dddddd;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
