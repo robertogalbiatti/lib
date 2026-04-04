@@ -16,7 +16,7 @@
 # production
 /build
 
-# build
+#build
 /dist
 
 # misc
