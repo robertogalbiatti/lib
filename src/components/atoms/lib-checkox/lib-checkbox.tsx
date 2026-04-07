@@ -1,24 +1,25 @@
-import React from 'react';
+import { InputHTMLAttributes } from 'react';
 import styles from './lib-checkbox.module.scss';
 
 type LibCheckboxProps = {
-  children: React.ReactNode;
-  onChange?: () => void;
-  disabled?: boolean;
-};
+  label?: string;
+  variant?: 'primary' | 'secondary';
+} & InputHTMLAttributes<HTMLInputElement>;
 
 export const LibCheckbox = ({
-  children,
-  onChange,
-  disabled = false,
+  label,
+  variant = 'primary',
+  className = '',
+  ...rest
 }: LibCheckboxProps) => {
-  const checkboxClass = `${styles.container} ${disabled ? styles.disabled : ''}`;
+  const containerClass = [styles.container, styles[variant], className]
+    .filter(Boolean)
+    .join(' ');
 
   return (
-    <label className={checkboxClass}>
-      {children}
-      <input type="checkbox" onChange={onChange} disabled={disabled} />
-
+    <label className={containerClass}>
+      <input type="checkbox" {...rest} />
+      <span>{label}</span>
       <span className={styles.checkmark}></span>
     </label>
   );
