@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { LibButton } from '../src/components/atoms/lib-button';
 import { LibCheckbox } from '../src/components/atoms/lib-checkox';
+import { LibChip } from '../src/components/atoms/lib-chip';
 
 function App() {
   const [checked, setChecked] = useState(false);
@@ -48,9 +49,16 @@ function App() {
       </div>
       <div>
         <h2>Checkbox</h2>
-        <LibCheckbox disabled={false} onChange={() => setChecked(!checked)}>
-          Checkbox
-        </LibCheckbox>
+        <LibCheckbox
+          disabled={false}
+          onChange={() => setChecked(!checked)}
+          label="Click me!"
+        ></LibCheckbox>
+      </div>
+
+      <div>
+        <h2>Chip</h2>
+        <LibChip label="LibChip" color="red"></LibChip>
       </div>
     </main>
   );
