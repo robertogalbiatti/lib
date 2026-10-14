@@ -1,0 +1,20 @@
+.container {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  color: white;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  transition: all 0.3s ease;
+  align-items: center;
+  span {
+    color: white;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
