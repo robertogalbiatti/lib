@@ -22,6 +22,7 @@
 - [x] Button
 - [x] Chip
 - [x] Checkbox
+- [x] Text Field
 
 ### Review existing components
 
@@ -38,9 +39,6 @@
 
 ## 3. Next components — high priority
 
-- [ ] **Input** — text, placeholder, label, helper text, error, and disabled states
-- [ ] **Label** — correctly associate labels with form fields
-- [ ] **Textarea** — multiline input, character limit, and error state
 - [ ] **Radio / RadioGroup** — single selection and keyboard navigation
 - [ ] **Select** — single selection, label, error, and disabled states
 - [ ] **Spinner / Loading** — accessible loading indicator

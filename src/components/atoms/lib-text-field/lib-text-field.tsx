@@ -3,13 +3,15 @@ import styles from './lib-text-field.module.scss';
 
 type LibTextField = {
   variant?: 'primary' | 'secondary';
+  label: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export const LibTextField = ({
-  type,
+  type = 'text',
   id,
   required,
   variant = 'primary',
+  label,
   className = '',
   ...rest
 }: LibTextField) => {
@@ -18,8 +20,19 @@ export const LibTextField = ({
     .join(' ');
 
   return (
-    <label className={containerClass}>
-      <input type="text" {...rest} />
-    </label>
+    <div className={containerClass}>
+      <input
+        {...rest}
+        id={id}
+        type={type}
+        required={required}
+        placeholder=" "
+      />
+
+      <label htmlFor={id}>
+        {label}
+        {required && <span aria-hidden="true"> *</span>}
+      </label>
+    </div>
   );
 };

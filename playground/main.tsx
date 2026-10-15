@@ -64,9 +64,15 @@ function App() {
 
       <div>
         <h2>Text Field</h2>
-        <LibTextField placeholder="Some Text"></LibTextField>
+        <LibTextField id="email" label="E-mail" type="email"></LibTextField>
         <h2>Text Field Disabled</h2>
-        <LibTextField disabled placeholder="Some Text"></LibTextField>
+        <LibTextField
+          id="password"
+          label="Senha"
+          type="password"
+          variant="secondary"
+          disabled
+        ></LibTextField>
       </div>
     </main>
   );
