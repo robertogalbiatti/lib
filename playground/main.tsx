@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { LibButton } from '../src/components/atoms/lib-button';
-import { LibCheckbox } from '../src/components/atoms/lib-checkox';
+import { LibCheckbox } from '../src/components/atoms/lib-checkbox';
 import { LibChip } from '../src/components/atoms/lib-chip';
+import { LibTextField } from '../src/components/atoms/lib-text-field';
 
 function App() {
   const [checked, setChecked] = useState(false);
@@ -59,6 +60,19 @@ function App() {
       <div>
         <h2>Chip</h2>
         <LibChip label="LibChip" color="red"></LibChip>
+      </div>
+
+      <div>
+        <h2>Text Field</h2>
+        <LibTextField id="email" label="E-mail" type="email"></LibTextField>
+        <h2>Text Field Disabled</h2>
+        <LibTextField
+          id="password"
+          label="Senha"
+          type="password"
+          variant="secondary"
+          disabled
+        ></LibTextField>
       </div>
     </main>
   );

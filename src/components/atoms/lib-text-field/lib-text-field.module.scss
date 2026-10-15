@@ -1,0 +1,72 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 12px;
+    border: 1px solid #888;
+    border-radius: 4px;
+    outline: none;
+    background: transparent;
+    font: inherit;
+    transition: border-color 0.2s ease;
+    color: #ffffff;
+  }
+
+  label {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    padding: 0 4px;
+    color: #666;
+    pointer-events: none;
+    transform-origin: left center;
+
+    transition:
+      top 0.2s ease,
+      font-size 0.2s ease,
+      color 0.2s ease;
+  }
+
+  input:hover {
+    border-color: #333;
+  }
+
+  input:focus {
+    border-width: 2px;
+  }
+
+  input:focus + label,
+  input:not(:placeholder-shown) + label {
+    top: -8px;
+    font-size: 12px;
+    z-index: 1;
+    color: #1976d2;
+    background-color: black;
+  }
+
+  input:focus + label {
+    color: #1976d2;
+    background-color: black;
+    z-index: 1;
+  }
+}
+
+.primary {
+  input:focus {
+    border-color: #e50914;
+  }
+}
+
+.secondary {
+  input:focus {
+    border-color: #9c27b0;
+  }
+
+  input:focus + label {
+    color: #9c27b0;
+  }
+}
