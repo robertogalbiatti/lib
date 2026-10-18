@@ -5,10 +5,13 @@ import { LibCheckbox } from '../src/components/atoms/lib-checkbox';
 import { LibChip } from '../src/components/atoms/lib-chip';
 import { LibTextField } from '../src/components/atoms/lib-text-field';
 import { LibTextArea } from '../src/components/atoms/lib-text-area';
+import { LibRadioButton } from '../src/components/atoms/lib-radiobutton';
+import { LibRadioGroup } from '../src/components/molecules/lib-radiogroup';
 
 function App() {
   const [checked, setChecked] = useState(false);
   const [description, setDescription] = useState("");
+  const [payment, setPayment] = useState('pix');
 
   return (
     <main>
@@ -86,6 +89,36 @@ function App() {
         ></LibTextArea>
         <h2>Text Area Disabled</h2>
         <LibTextArea id='description' label='' disabled></LibTextArea>
+      </div>
+
+      <div>
+        <h2>Radio Button</h2>
+
+        <LibRadioGroup
+      name="payment"
+      label="Forma de pagamento"
+      value={payment}
+      onValueChange={setPayment}
+      orientation="vertical"
+    >
+      <LibRadioButton
+        id="payment-pix"
+        value="pix"
+        label="PIX"
+      />
+
+      <LibRadioButton
+        id="payment-credit"
+        value="credit"
+        label="Cartão de crédito"
+      />
+
+      <LibRadioButton
+        id="payment-cash"
+        value="cash"
+        label="Dinheiro"
+      />
+    </LibRadioGroup>
       </div>
     </main>
   );
