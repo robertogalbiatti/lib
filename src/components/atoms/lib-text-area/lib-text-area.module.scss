@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 12px;
+    border: 1px solid #888;
+    border-radius: 4px;
+    outline: none;
+    background: transparent;
+    font: inherit;
+    transition: border-color 0.2s ease;
+    color: #ffffff;
+    border-color: #e50914;
+    resize: none;
+  }
+
+  label {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    padding: 0 4px;
+    color: #666;
+    pointer-events: none;
+    transform-origin: left center;
+
+    transition:
+      top 0.2s ease,
+      font-size 0.2s ease,
+      color 0.2s ease;
+  }
+}

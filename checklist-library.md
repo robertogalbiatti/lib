@@ -23,6 +23,7 @@
 - [x] Chip
 - [x] Checkbox
 - [x] Text Field
+- [x] Text Area
 
 ### Review existing components
 
