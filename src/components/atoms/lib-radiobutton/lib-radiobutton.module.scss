@@ -2,7 +2,7 @@
   padding: 18px 30px;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
+  // cursor: pointer;
   font-size: 16px;
   font-weight: 500;
   font-family: 'Inter', sans-serif;
@@ -19,6 +19,7 @@
 
   label {
     color: white;
+    cursor: pointer;
   }
 
 

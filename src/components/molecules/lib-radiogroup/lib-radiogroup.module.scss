@@ -1,8 +1,8 @@
-.radiobutton {
+.radiogroup {
   padding: 18px 30px;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
+  // cursor: pointer;
   font-size: 16px;
   font-weight: 500;
   font-family: 'Inter', sans-serif;
@@ -12,13 +12,14 @@
     opacity: 0.8;
   }
 
-  &:active {
-    transform: scale(0.98);
-  }
+  // &:active {
+  //   transform: scale(0.98);
+  // }
 }
 
   label {
     color: white;
+    cursor: pointer;
   }
 
 
@@ -30,7 +31,7 @@
     opacity: 0.5;
   }
 
-  &:active {
-    transform: none;
-  }
+  // &:active {
+  //   transform: none;
+  // }
 }

@@ -11,6 +11,7 @@ type RadioGroupContextProps = {
 
 export const RadioGroupContext =
   createContext<RadioGroupContextProps | null>(null);
+  //creating context for the radio group to share state and behavior with its children
 
 type LibRadioGroupProps = {
   name: string;
