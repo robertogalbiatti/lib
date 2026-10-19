@@ -1,0 +1,103 @@
+.radiobuttonContainer {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  padding-right: 12px;
+
+  .radiobutton {
+    appearance: none;
+    -webkit-appearance: none;
+
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+
+    border: 2px solid #888;
+    border-radius: 50%;
+    background-color: transparent;
+
+    display: inline-grid;
+    place-content: center;
+    cursor: pointer;
+
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.1s ease;
+
+    // Inner point
+    &::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #ef4444;
+
+      transform: scale(0);
+      transition: transform 0.15s ease;
+    }
+
+    // Hover just circle
+    &:not(:disabled):hover {
+      box-shadow: 0 0 0 8px rgb(128 128 128 / 20%);
+    }
+
+    // Effect pressing circle
+    &:not(:disabled):active {
+      box-shadow: 0 0 0 8px rgb(128 128 128 / 30%);
+      transform: scale(0.92);
+    }
+
+    &:checked {
+      border-color: #ef4444;
+
+      &::before {
+        transform: scale(1);
+      }
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #ef4444;
+      outline-offset: 3px;
+    }
+  }
+
+  // No halo while mouse on label
+  &:has(label:hover) .radiobutton:hover {
+    box-shadow: none;
+  }
+
+  label {
+    padding-left: 8px;
+    color: white;
+    cursor: pointer;
+
+    // Halo while label clicked
+    &:active {
+      cursor: pointer;
+    }
+  }
+
+  // Applies halo on radio when label clicked
+  &:has(label:active) .radiobutton:not(:disabled) {
+    box-shadow: 0 0 0 8px rgb(128 128 128 / 30%);
+  }
+
+  // Radio label disabled
+  &:has(.radiobutton:disabled) {
+    label {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

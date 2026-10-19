@@ -5,10 +5,14 @@ import { LibCheckbox } from '../src/components/atoms/lib-checkbox';
 import { LibChip } from '../src/components/atoms/lib-chip';
 import { LibTextField } from '../src/components/atoms/lib-text-field';
 import { LibTextArea } from '../src/components/atoms/lib-text-area';
+import { LibRadioButton } from '../src/components/atoms/lib-radiobutton';
+import { LibRadioGroup } from '../src/components/molecules/lib-radiogroup';
 
 function App() {
   const [checked, setChecked] = useState(false);
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState('');
+  const [payment, setPayment] = useState('pix');
+  const [framework, setFramework] = useState('react');
 
   return (
     <main>
@@ -16,7 +20,7 @@ function App() {
 
       <div>
         <h2>Primary Button</h2>
-        <LibButton onClick={() => alert("Primary button clicked!")}>
+        <LibButton onClick={() => alert('Primary button clicked!')}>
           Primary Button
         </LibButton>
       </div>
@@ -24,8 +28,8 @@ function App() {
       <div>
         <h2>Secondary Button</h2>
         <LibButton
-          variant='secondary'
-          onClick={() => alert("Secondary button clicked!")}
+          variant="secondary"
+          onClick={() => alert('Secondary button clicked!')}
         >
           Secondary Button
         </LibButton>
@@ -34,8 +38,8 @@ function App() {
       <div>
         <h2>Tertiary Button</h2>
         <LibButton
-          variant='tertiary'
-          onClick={() => alert("Tertiary button clicked!")}
+          variant="tertiary"
+          onClick={() => alert('Tertiary button clicked!')}
         >
           Tertiary Button
         </LibButton>
@@ -45,7 +49,7 @@ function App() {
         <h2>Disabled Button</h2>
         <LibButton
           disabled={true}
-          onClick={() => alert("This should not appear!")}
+          onClick={() => alert('This should not appear!')}
         >
           Disabled Button
         </LibButton>
@@ -55,24 +59,24 @@ function App() {
         <LibCheckbox
           disabled={false}
           onChange={() => setChecked(!checked)}
-          label='Click me!'
+          label="Click me!"
         ></LibCheckbox>
       </div>
 
       <div>
         <h2>Chip</h2>
-        <LibChip label='LibChip' color='red'></LibChip>
+        <LibChip label="LibChip" color="red"></LibChip>
       </div>
 
       <div>
         <h2>Text Field</h2>
-        <LibTextField id='email' label='E-mail' type='email'></LibTextField>
+        <LibTextField id="email" label="E-mail" type="email"></LibTextField>
         <h2>Text Field Disabled</h2>
         <LibTextField
-          id='password'
-          label='Senha'
-          type='password'
-          variant='secondary'
+          id="password"
+          label="Senha"
+          type="password"
+          variant="secondary"
           disabled
         ></LibTextField>
       </div>
@@ -80,12 +84,52 @@ function App() {
       <div>
         <h2>Text Area</h2>
         <LibTextArea
-          id='description'
-          label=''
+          id="description"
+          label=""
           onChange={(event) => setDescription(event.target.value)}
         ></LibTextArea>
         <h2>Text Area Disabled</h2>
-        <LibTextArea id='description' label='' disabled></LibTextArea>
+        <LibTextArea id="description" label="" disabled></LibTextArea>
+      </div>
+
+      <div>
+        <h2>Radio Button</h2>
+
+        <LibRadioGroup
+          name="payment"
+          label="Forma de pagamento"
+          value={payment}
+          onValueChange={setPayment}
+          orientation="vertical"
+        >
+          <LibRadioButton id="payment-pix" value="pix" label="PIX" />
+
+          <LibRadioButton
+            id="payment-credit"
+            value="credit"
+            label="Cartão de crédito"
+          />
+
+          <LibRadioButton id="payment-cash" value="cash" label="Dinheiro" />
+          <LibRadioButton
+            id="payment-coin"
+            value="penny"
+            label="Moeda"
+            disabled
+          />
+        </LibRadioGroup>
+
+        <LibRadioGroup
+          name="framework"
+          label="framework"
+          value={framework}
+          onValueChange={setFramework}
+          orientation="horizontal"
+        >
+          <LibRadioButton id="react" value="react" label="React" />
+          <LibRadioButton id="angular" value="angular" label="Angular" />
+          <LibRadioButton id="vue" value="vue" label="Vue" />
+        </LibRadioGroup>
       </div>
     </main>
   );
