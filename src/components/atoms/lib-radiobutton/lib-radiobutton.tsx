@@ -1,4 +1,3 @@
-
 import { InputHTMLAttributes, useContext } from 'react';
 import { RadioGroupContext } from '../../molecules/lib-radiogroup/lib-radiogroup';
 import styles from './lib-radiobutton.module.scss';
@@ -24,26 +23,23 @@ export const LibRadioButton = ({
   const context = useContext(RadioGroupContext);
 
   if (!context) {
-    throw new Error(
-      'LibRadioButton must be used within LibRadioGroup.'
-    );
+    throw new Error('LibRadioButton must be used within LibRadioGroup.');
   }
 
-  const { name, value, onValueChange, disabled: groupDisabled } =
-    context;
+  const { name, value, onValueChange, disabled: groupDisabled } = context;
 
-  const radioClass = [
-    styles.radiobutton,
-    styles[variant],
-    className,
-  ]
+  const radioClass = [styles.radiobutton, styles[variant], className]
     .filter(Boolean)
     .join(' ');
 
   const isDisabled = disabled || groupDisabled;
 
   return (
-    <div className={styles.radiobuttonContainer}>
+    <div
+      className={`${styles.radiobuttonContainer} ${
+        isDisabled ? styles.disabled : ''
+      }`}
+    >
       <input
         {...rest}
         id={id}

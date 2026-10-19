@@ -24,6 +24,7 @@
 - [x] Checkbox
 - [x] Text Field
 - [x] Text Area
+- [x] RadioGroup
 
 ### Review existing components
 
@@ -40,7 +41,6 @@
 
 ## 3. Next components — high priority
 
-- [ ] **Radio / RadioGroup** — single selection and keyboard navigation
 - [ ] **Select** — single selection, label, error, and disabled states
 - [ ] **Spinner / Loading** — accessible loading indicator
 - [ ] **Alert** — informational, success, warning, and error messages

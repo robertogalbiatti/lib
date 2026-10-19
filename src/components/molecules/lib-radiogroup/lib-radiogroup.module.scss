@@ -1,37 +1,22 @@
 .radiogroup {
-  padding: 18px 30px;
+  display: flex;
+  gap: 8px;
   border: none;
   border-radius: 4px;
-  // cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
   font-family: 'Inter', sans-serif;
-  transition: all 0.3s ease;
 
-  &:hover {
-    opacity: 0.8;
+  &.vertical {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  // &:active {
-  //   transform: scale(0.98);
-  // }
-}
-
-  label {
-    color: white;
-    cursor: pointer;
+  &.horizontal {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
-
-.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-
-  &:hover {
+  &.disabled {
     opacity: 0.5;
   }
-
-  // &:active {
-  //   transform: none;
-  // }
 }
