@@ -31,8 +31,13 @@
       color 0.2s ease;
   }
 
-  input:hover {
+  input:not(:disabled):hover {
     border-color: #333;
+  }
+
+  input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
   input:focus {
