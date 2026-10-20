@@ -8,6 +8,7 @@ import { LibTextArea } from '../src/components/atoms/lib-text-area';
 import { LibRadioButton } from '../src/components/atoms/lib-radiobutton';
 import { LibRadioGroup } from '../src/components/molecules/lib-radiogroup';
 import { LibSelect } from '../src/components/atoms/lib-select';
+import { LibLoadingSpinner } from '../src/components/atoms/lib-loading-spinner';
 
 function App() {
   const [checked, setChecked] = useState(false);
@@ -145,6 +146,10 @@ function App() {
         <option value="saab">Saab</option>
         <option value="mercedes">Mercedes</option>
       </LibSelect>
+
+      <h2>Loading Spinner</h2>
+      <br></br>
+      <LibLoadingSpinner size={0.7} label="Carregando dados" />
     </main>
   );
 }

@@ -25,6 +25,7 @@
 - [x] Text Field
 - [x] Text Area
 - [x] RadioGroup
+- [x] Select
 
 ### Review existing components
 
@@ -41,7 +42,6 @@
 
 ## 3. Next components — high priority
 
-- [ ] **Select** — single selection, label, error, and disabled states
 - [ ] **Spinner / Loading** — accessible loading indicator
 - [ ] **Alert** — informational, success, warning, and error messages
 - [ ] **Typography** — headings, paragraphs, captions, and helper text
