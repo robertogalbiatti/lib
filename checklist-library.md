@@ -26,6 +26,8 @@
 - [x] Text Area
 - [x] RadioGroup
 - [x] Select
+- [x] Spinner / Loading
+- [x] Alert
 
 ### Review existing components
 
@@ -42,8 +44,6 @@
 
 ## 3. Next components — high priority
 
-- [ ] **Spinner / Loading** — accessible loading indicator
-- [ ] **Alert** — informational, success, warning, and error messages
 - [ ] **Typography** — headings, paragraphs, captions, and helper text
 - [ ] **Divider** — visual separation with appropriate semantics
 

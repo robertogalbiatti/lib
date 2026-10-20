@@ -9,6 +9,7 @@ import { LibRadioButton } from '../src/components/atoms/lib-radiobutton';
 import { LibRadioGroup } from '../src/components/molecules/lib-radiogroup';
 import { LibSelect } from '../src/components/atoms/lib-select';
 import { LibLoadingSpinner } from '../src/components/atoms/lib-loading-spinner';
+import { LibAlert } from '../src/components/molecules/lib-alert';
 
 function App() {
   const [checked, setChecked] = useState(false);
@@ -149,7 +150,36 @@ function App() {
 
       <h2>Loading Spinner</h2>
       <br></br>
+
       <LibLoadingSpinner size={0.7} label="Carregando dados" />
+
+      <h2>Alerts</h2>
+      <div style={{ width: '70%' }}>
+        <LibAlert variant="primary" title="Primary alert">
+          This is a primary alert.
+        </LibAlert>
+
+        <LibAlert variant="success" title="Success!">
+          Your changes have been saved successfully.
+        </LibAlert>
+
+        <LibAlert variant="warning" title="Warning!" dismissible>
+          You should check the information before continuing.
+        </LibAlert>
+
+        <LibAlert
+          variant="danger"
+          title="Error!"
+          dismissible
+          onClose={() => console.log('Alert closed')}
+        >
+          Something went wrong. Please try again.
+        </LibAlert>
+
+        <LibAlert variant="info">
+          This alert has no title or close button.
+        </LibAlert>
+      </div>
     </main>
   );
 }
